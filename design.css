@@ -1,0 +1,703 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+/* Responsive Gallery */
+.gall-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.gallery-item {
+    width: 100%;
+    max-width: 300px;  /* Limits the max width */
+    height: 200px;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 600px) {
+    .gallery-item {
+        width: 48%; /* Two items per row */
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery-item {
+        width: 23%; /* Four items per row */
+    }
+}
+
+
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+/* Header Styling */
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333333;
+    padding: 15px 20px;
+    color: white;
+}
+
+/* OLD WRITTEN LOGO
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+*/
+
+
+.gallimg2 {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+    font-family: Candara Light;
+}
+
+.nav-links a:hover {
+    color: lightpink;
+}
+
+/* Mobile Menu Icon */
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Hidden on large screens */
+    color: #fff; /* Text color */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: 0.4s ease-in-out;
+    text-shadow: 0 0 5px #f8f8f8, 0 0 10px lightpink ;
+}
+
+/* Glowing Effect on Hover */
+.nav-links a:hover {
+    color: pink; /* Change text color when hovered */
+    text-shadow: 0 0 10px #f8f8f8, 0 0 20px lightpink, 0 0 30px pink;
+    transform: scale(1.1); /* Slight zoom effect */
+
+}
+
+/* Responsive Header for Mobile */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide menu links initially */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show when menu is toggled */
+    }
+
+    .menu-icon {
+        display: block; /* Show hamburger menu */
+    }
+
+    .nav-links a {
+        padding: 10px;
+        display: block;
+        border-bottom: 1px solid #444;
+    }
+}
+
+
+
+/* Gallery Responsive Breakpoints */
+@media (min-width: 600px) {
+    .gallery-item {
+        width: 48%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery-item {
+        width: 23%;
+    }
+}
+
+.gall-div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.gallery-item {
+    width: 100%;
+    max-width: fit-content;
+    height: fit-content;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.gallery-item video {
+    width: auto; /*USED TO BE 500PX*/
+    height: auto; /*USED TO BE 500PX*/
+    border-radius: 30px;
+    transform: rotate(270deg);
+
+}
+/* OLD LOGO EFFECT
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Castellar;
+    color: white; /* Initial color */
+    /*transition: 0.4s ease-in-out;
+    text-shadow: 0 0 5px white, 0 0 10px white;
+}
+
+*/
+/* Glowing effect on hover */ /* OLD LOGO EFFECT!!
+.logo:hover {
+    color: #fff; /* Change color when hovered */
+    /* text-shadow: 0 0 10px #f8f8f8, 0 0 20px lightpink, 0 0 30px hotpink;
+    transform: scale(1.1); /* Slight zoom effect */
+/*}*/
+
+
+/*Mini Title Under Video Clip*/
+/*Arial Nova Light, Baskerville Old Face,Bell MT, Bodoni MT Condensed, Broadway, Calibri Light, Cambria Math, Candara Light, Century Gothic */
+.min-title {
+    margin: -10px -12px 2px 20px;
+    font-family: "Candara Light";
+    font-size: 30px;
+    background-color: pink; /* Whole section changes color */
+    max-width: 174px;
+}
+
+
+/*IMG PLACEMENT TST*/
+/* Image and text container */
+.image-section {
+    width: 100%; /*60*/
+    max-width: 1220px; /* Smaller size */
+    padding: 20px;
+    border-radius: 20px; /* Soft border */
+    background-color: whitesmoke;
+    transition: all 0.3s ease-in-out;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover effect for the entire section */
+.image-section:hover {
+    background-color: pink; /* Whole section changes color */
+    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.5); /* Soft shadow */
+
+}
+
+/* Image inside the container */
+.image-section img {
+    width: 80%;
+    max-width: 180px;
+    height: auto;
+
+}
+
+
+/* Text color change on hover */
+.image-section:hover .text {
+    color: white;
+}
+
+
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    color: #333;
+    transition: color 0.3s ease-in-out;
+}
+
+
+
+.image-section:hover .title {
+    color: white;
+}
+
+
+.description {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+    transition: color 0.3s ease-in-out;
+    flex-direction: row; /* Image on the right */
+    font-family: Candara Light;
+}
+
+.image-section:hover .description {
+    color: white;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.learn-more {
+    background-color: transparent;
+    border: 2px solid #ff69b4;
+    color: #ff69b4;
+    font-family: Candara Light;
+}
+
+.learn-more:hover {
+    background-color: #ff69b4;
+    color: white;
+}
+
+.text-container {
+    padding-left: 0;
+    padding-top: 15px;
+}
+
+.buttons {
+    justify-content: center;
+}
+
+
+
+/*TEST*/
+.row {
+    display: flex; /*THE REASON WHY ITS SIDE TO SIDE*/
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+.reverse {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.row img {
+    width: 45%;
+    max-width: 180px;
+    border-radius: 15px;
+}
+
+.content {
+    width: 45%;
+    text-align: left;
+    font-family: Candara Light;
+}
+
+
+
+
+
+
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .image-section {
+        width: auto;
+        max-width: unset; /*USED TO 250PX*/
+    }
+
+    .image-section img {
+        max-width: 150px;
+    }
+}
+
+
+/* MENU PAGE STARTS HERE */
+
+.cupcake-item {
+    flex-direction: column;
+    width: min(235px); /* Ensures two items per row with spacing */
+    padding: 20px;
+    display: flex;
+    border: 2px solid pink; /* Seamless pink border around the entire content */
+    border-radius: 10px; /* Rounded corners for the border */
+}
+
+/*INLINE GRID MAKES IT SIDE BY SIDE */
+.menu-wrapper {
+    display: inline-grid;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+
+
+}
+.content2-section {
+    display: flex;
+    flex-wrap: wrap; /* Ensures content wraps on smaller screens */
+    gap: 20px; /* Adds space between the image and the form */
+    justify-content: flex-start;
+    font-family: "Candara Light";
+}
+
+.cupcake-image h2, .add-quantity-btn {
+    margin: 0; /* Remove any margins around the h2 */
+    display: inline-flex; /* This will ensure both h2 and button are inline */
+
+}
+
+/* Style for the + button */
+.add-quantity-btn button {
+    font-size: 12px;
+    padding: 5px 10px;
+    background-color: pink; /* Background color for the button */
+    border: none;
+    cursor: pointer;
+    border-radius: 50%; /* Optional: makes the button round */
+    margin-left: 10px; /* Optional: space between the h2 text and the button */
+
+}
+
+.ingredients-btn {
+    font-size: 12px;
+    padding: 5px 10px;
+    background-color: pink; /* Background color for the button */
+    border: none;
+    cursor: pointer;
+    border-radius: 50%; /* Optional: makes the button round */
+    margin-left: 10px; /* Optional: space between the h2 text and the button */
+
+}
+
+.ingredients-content {
+    width: auto;
+    font-family: "Candara Light";
+    font-size: 12px;
+
+}
+
+.content2 {
+    width: auto;
+    font-family: "Candara Light";
+
+}
+
+
+
+.menu-wrapper img {
+    width: 80%;
+    max-width: 180px;
+    min-width: 180px;
+    max-height: 250px;
+    min-height: 250px;
+    height: auto;
+    padding: 0px 0px 0px 20px;
+
+}
+
+.content2 h2 {
+    padding: 0px 0px 0px 20px;
+    font-family: "Candara Light";
+    font-size: 16px;
+}
+
+
+
+.content3 {
+    width: auto;
+    font-family: "Candara Light";
+    font-size: 16px;
+
+}
+
+.content3 h2 {
+    padding: 0px 0px 0px 20px;
+    font-family: "Candara Light";
+    font-size: 16px;
+
+}
+
+.content4 h2 {
+    padding: 0px 0px 0px 20px;
+    font-family: "Candara Light";
+    font-size: 16px;
+}
+
+
+.content4 {
+    width: auto;
+    font-family: "Candara Light";
+    font-size: 16px;
+
+}
+
+
+.content5 h2 {
+    padding: 0px 0px 0px 20px;
+    font-family: "Candara Light";
+    font-size: 16px;
+}
+
+
+.content5 {
+    width: auto;
+    font-family: "Candara Light";
+    font-size: 16px;
+
+}
+
+.content6 h2 {
+    padding: 0px 0px 0px 20px;
+    font-family: "Candara Light";
+    font-size: 16px;
+}
+
+
+.content6 {
+    width: auto;
+    font-family: "Candara Light";
+    font-size: 16px;
+
+}
+
+.content7 h2 {
+    padding: 0px 0px 0px 20px;
+    font-family: "Candara Light";
+    font-size: 16px;
+}
+
+
+.content7 {
+    width: auto;
+    font-family: "Candara Light";
+    font-size: 16px;
+
+}
+
+.content8 h2 {
+    padding: 0px 0px 0px 20px;
+    font-family: "Candara Light";
+    font-size: 16px;
+}
+
+
+.content8 {
+    width: auto;
+    font-family: "Candara Light";
+    font-size: 16px;
+
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .menu-wrapper {
+        width: auto;
+        max-width: unset; /*USED TO 250PX*/
+    }
+
+    .menu-wrapper img {
+        max-width: 150px;
+    }
+}
+
+/*ADD TO CART PAGE*/
+
+.cart-container {
+
+    max-width: 768px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+
+    border: 2px solid #f7c2d7;
+    text-align: center;
+
+}
+
+#cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#cart-total {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+
+#checkout-button {
+    background-color: #f7c2d7;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: auto;
+}
+
+#checkout-button:hover {
+    background-color: #b04a78;
+}
+
+/* Responsive design adjustments */
+@media screen and (max-width: 768px) {
+    /* Adjust layout for tablets and mobile screens */
+    .cart-container {
+        padding: 15px;
+    }
+
+    #cart-total {
+        font-size: 16px; /* Adjust total font size */
+    }
+
+    #checkout-button {
+        font-size: 14px; /* Smaller button text */
+    }
+}
+
+
+    #cart-items {
+        gap: 10px; /* Reduced gap for smaller screens */
+    }
+
+    #checkout-button {
+        font-size: 14px; /* Button text adjustment */
+        padding: 10px 15px; /* Adjust button padding */
+    }
+
+
+
+
+ /*CHECKOUT PAGE*/
+#cart-items, #checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#checkout-form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #f7c2d7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styling */
+button[type="submit"] {
+    background-color: #d15c94;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+    font-family: "Candara Light", sans-serif; /* Apply Candara Light font */
+}
+
+h2 {
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+    font-family: "Candara Light", sans-serif; /* Apply Candara Light font */
+}
+
+
+.cart-container {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+        margin-top: 20px;
+        font-family: "Candara Light", sans-serif; /* Apply Candara Light font */
+}
+
+#total-price {
+    color: #d15c94;  /* Pink color for the total price */
+}
+
+#cart-items {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+        margin-top: 20px;
+        font-family: "Candara Light", sans-serif; /* Apply Candara Light font */
+}
+
+
+@media screen and (max-width: 768px) {
+    /* Adjust layout for tablets and mobile screens */
+    #cart-items {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Adjust layout for tablets and mobile screens */
+    .cart-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

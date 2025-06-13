@@ -1,0 +1,128 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="design.css">
+</head>
+<body>
+
+<header class="heading">
+    <!--<div class="logo">BakedByKey</div> -->
+    <img src="snipsnip.png"class="gallimg2"/>
+    <nav class="nav-links">
+        <a href="home.html">HOME</a>
+        <a href="menu.html">MENU</a>
+        <a href="addtocart.html">CART</a>
+    </nav>
+
+    <div class="menu-icon">&#9776;</div> <!-- Hamburger icon -->
+</header>
+
+    <h2>Your Order</h2>
+    <div id="cart-items">
+
+    </div>
+
+    <h3>Total: £<span id="total-price">0.00</span></h3>
+
+    <h2>Customer Information</h2>
+    <form id="checkout-form">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" placeholder="Full Name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Email" required><br><br>
+
+        <label for="notes">Additional Notes:</label>
+        <textarea id="notes" placeholder="Any extra notes (optional)"></textarea><br><br>
+
+        <button type="submit">Place Order</button>
+    </form>
+</body>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsDiv = document.getElementById('cart-items');
+            const totalPriceSpan = document.getElementById('total-price');
+            let total = 0;
+
+            cart.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'cart-item';
+                div.innerHTML = `
+          <p><strong>${item.name}</strong></p>
+          <p>Quantity: ${item.quantity}</p>
+          <p>Flavours: ${item.flavours.join(', ')}</p>
+          <p>Description: ${item.description}</p>
+          <p>Price: £${item.price.toFixed(2)}</p>
+        `;
+                cartItemsDiv.appendChild(div);
+                total += item.price;
+            });
+
+            totalPriceSpan.textContent = total.toFixed(2);
+
+            const form = document.getElementById('checkout-form');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                alert('Thank you! Your order has been placed.');
+                localStorage.removeItem('cart');
+                form.reset();
+            });
+        });
+    </script>
+
+
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const menuIcon = document.querySelector('.menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll(".image-section");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

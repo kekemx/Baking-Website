@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu</title>
+  <link rel="stylesheet" href="design.css">
+</head>
+<body>
+<!-- Responsive Header -->
+<header class="heading">
+  <!--<div class="logo">BakedByKey</div> -->
+  <img src="snipsnip.png"class="gallimg2"/>
+  <nav class="nav-links">
+    <a href="home.html">HOME</a>
+    <a href="menu.html">MENU</a>
+    <a href="addtocart.html">CART</a>
+  </nav>
+
+  <div class="menu-icon">&#9776;</div> <!-- Hamburger icon -->
+</header>
+
+
+<div class="min-title">
+  <h5>Choose Your Cupcake</h5>
+</div>
+
+
+
+  <div class="menu-wrapper">
+  <div class="cupcake-item">
+    <div class="cupcake-image">
+      <img src="biscoff-filling.jpg" alt="Cupcake Image" id="cupcake-image">
+      <div class="content2">
+        <h2>Biscoff Cupcakes</h2>
+        <!-- Button to toggle cupcake quantity options and other hidden sections -->
+        <div class="add-quantity-btn">
+          <button id="toggle-quantity">+</button>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Hidden section that appears after clicking the + button -->
+
+    <div class="hidden-section" id="hidden-section" style="display: none;">
+
+
+      <!-- Product Description -->
+      <div class="product-description">
+        <div class="content2">
+        <h3>Product Description</h3>
+        <p>Our Biscoff Cupcakes are made with a light and fluffy base, topped with rich Biscoff spread and a sprinkle of crushed Biscoff biscuits. Perfect for anyone who a caramlised taste</p>
+      </div>
+        <div class="ingredients-content">
+          <p>Ingredients: Flour, Sugar, Eggs, Butter, Oil, Milk, Vanilla Extract.</p>
+        </div>
+      </div>
+
+      <!-- Cupcake quantity options -->
+      <div class="cupcake-options">
+        <div class="content2">
+        <h2>Select Cupcake Quantity</h2>
+        </div>
+        <select id="cupcake-quantity">
+          <option value="1" data-price="12.00">4 Cupcakes</option>
+          <option value="1" data-price="20.00">6 Cupcakes</option>
+          <option value="1" data-price="30.00">12 Cupcakes</option>
+        </select>
+      </div>
+
+      <!-- Cupcake flavor selection -->
+      <div class="flavour-selection">
+        <div class="content2">
+          <h2>Select Cupcake Flavours</h2>
+        </div>
+        <div id="flavour-options">
+          <label><input type="checkbox" class="cupcake-flavour" value="Vanilla"> Vanilla</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Biscoff"> Biscoff</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Red Velvet"> Red Velvet</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Oreo"> Oreo</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Caramel"> Caramel</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Coffee"> Coffee</label><br>
+        </div>
+        <p id="flavour-limit-message" style="color: red; display: none;">You can select up to <span id="max-flavours">3</span> flavours.</p>
+      </div>
+
+      <!-- Custom design description -->
+      <div class="custom-design">
+        <div class="content2">
+        <h2>Design Your Cupcake</h2>
+        </div>
+        <textarea id="design-description" placeholder="Describe the design you want"></textarea>
+
+
+      <!-- Order summary -->
+      <div class="order-summary">
+        <div class="content2">
+        <h3>Order Summary</h3>
+        <p id="order-summary">Please select your quantity and design!</p>
+        </div>
+      </div>
+
+      <!-- Submit button -->
+        <button id="add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+  </div>
+
+
+
+<!-- NUMBER 2 -->
+<div class="menu-wrapper">
+<div class="cupcake-item">
+  <div class="cupcake-image">
+    <img src="decorated-cupcakes.jpg" alt="Cupcake Image" id="cupcake-image2">
+    <div class="content2">
+      <h2>Biscoff & Oreo Cupcakes</h2>
+      <!-- Button to toggle cupcake quantity options and other hidden sections -->
+      <div class="add-quantity-btn">
+        <button id="toggle-quantity2">+</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hidden section that appears after clicking the + button -->
+  <div class="hidden-section" id="hidden-section2" style="display: none;">
+
+    <!-- Product Description -->
+    <div class="product-description">
+      <div class="content2">
+        <h3>Product Description</h3>
+        <p>Decadent cupcakes with a Biscoff center and an Oreo cookie base, topped with rich buttercream. A perfect blend of crunch and cream in every bite!</p>
+      </div>
+      <div class="ingredients-content">
+        <p>Ingredients: Flour, Sugar, Eggs, Butter, Oil, Milk, Vanilla Extract.</p>
+      </div>
+    </div>
+
+    <!-- Cupcake quantity options -->
+    <div class="cupcake-options">
+      <div class="content2">
+        <h2>Select Cupcake Quantity</h2>
+      </div>
+      <select id="cupcake-quantity2">
+        <option value="4">4 Cupcakes</option>
+        <option value="6">6 Cupcakes</option>
+        <option value="12">12 Cupcakes</option>
+      </select>
+    </div>
+
+    <!-- Cupcake flavor selection -->
+    <div class="flavour-selection">
+      <div class="content2">
+        <h2>Select Cupcake Flavours</h2>
+      </div>
+      <div id="flavour-options2">
+        <label><input type="checkbox" class="cupcake-flavour" value="Vanilla"> Vanilla</label><br>
+        <label><input type="checkbox" class="cupcake-flavour" value="Biscoff"> Biscoff</label><br>
+        <label><input type="checkbox" class="cupcake-flavour" value="Red Velvet"> Red Velvet</label><br>
+        <label><input type="checkbox" class="cupcake-flavour" value="Oreo"> Oreo</label><br>
+        <label><input type="checkbox" class="cupcake-flavour" value="Caramel"> Caramel</label><br>
+        <label><input type="checkbox" class="cupcake-flavour" value="Coffee"> Coffee</label><br>
+      </div>
+      <p id="flavour-limit-message2" style="color: red; display: none;">You can select up to <span id="max-flavours2">3</span> flavours.</p>
+    </div>
+
+    <!-- Custom design description -->
+    <div class="custom-design">
+      <div class="content2">
+        <h2>Design Your Cupcake</h2>
+      </div>
+      <textarea id="design-description2" placeholder="Describe the design you want"></textarea>
+    </div>
+
+    <!-- Order summary -->
+    <div class="order-summary">
+      <div class="content2">
+        <h2>Order Summary</h2>
+        <p id="order-summary2">Please select your quantity and design!</p>
+      </div>
+    </div>
+
+    <!-- Submit button -->
+    <button id="add-to-cart2">Add to Cart</button>
+  </div>
+</div>
+</div>
+
+
+
+
+
+  <!-- NUMBER 3 -->
+  <div class="menu-wrapper">
+    <div class="cupcake-item">
+      <div class="cupcake-image">
+        <img src="oreo-cup.jpg" alt="Cupcake Image" id="cupcake-image3">
+        <div class="content2">
+          <h2>Oreo Cupcakes</h2>
+          <!-- Button to toggle cupcake quantity options and other hidden sections -->
+          <div class="add-quantity-btn">
+            <button id="toggle-quantity3">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hidden section that appears after clicking the + button -->
+      <div class="hidden-section" id="hidden-section3" style="display: none;">
+
+        <!-- Product Description -->
+        <div class="product-description">
+          <div class="content3">
+            <h3>Product Description</h3>
+            <p>Moist chocolate cupcakes with an Oreo cookie base. Crunchy, soft, and packed with Oreo goodness.</p>
+          </div>
+          <div class="ingredients-content">
+            <p>Ingredients: Flour, Sugar, Eggs, Butter, Oil, Milk, Vanilla Extract.</p>
+          </div>
+        </div>
+
+        <!-- Cupcake quantity options -->
+        <div class="cupcake-options">
+          <div class="content3">
+            <h2>Select Cupcake Quantity</h2>
+          </div>
+          <select id="cupcake-quantity3">
+            <option value="4">4 Cupcakes</option>
+            <option value="6">6 Cupcakes</option>
+            <option value="12">12 Cupcakes</option>
+          </select>
+        </div>
+
+        <!-- Cupcake flavor selection -->
+        <div class="flavour-selection">
+          <div class="content2">
+            <h2>Select Cupcake Flavours</h2>
+          </div>
+          <div id="flavour-options3">
+            <label><input type="checkbox" class="cupcake-flavour" value="Vanilla"> Vanilla</label><br>
+            <label><input type="checkbox" class="cupcake-flavour" value="Biscoff"> Biscoff</label><br>
+            <label><input type="checkbox" class="cupcake-flavour" value="Red Velvet"> Red Velvet</label><br>
+            <label><input type="checkbox" class="cupcake-flavour" value="Oreo"> Oreo</label><br>
+            <label><input type="checkbox" class="cupcake-flavour" value="Caramel"> Caramel</label><br>
+            <label><input type="checkbox" class="cupcake-flavour" value="Coffee"> Coffee</label><br>
+          </div>
+          <p id="flavour-limit-message3" style="color: red; display: none;">You can select up to <span id="max-flavours3">3</span> flavours.</p>
+        </div>
+
+        <!-- Custom design description -->
+        <div class="custom-design">
+          <div class="content3">
+            <h2>Design Your Cupcake</h2>
+          </div>
+          <textarea id="design-description3" placeholder="Describe the design you want"></textarea>
+        </div>
+
+        <!-- Order summary -->
+        <div class="order-summary">
+          <div class="content3">
+            <h2>Order Summary</h2>
+            <p id="order-summary3">Please select your quantity and design!</p>
+          </div>
+        </div>
+
+        <!-- Submit button -->
+        <button id="add-to-cart3">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- NUMBER 4 -->
+  <div class="menu-wrapper">
+    <div class="cupcake-item">
+      <div class="cupcake-image">
+        <img src="black-normal.jpg" alt="Cupcake Image" id="cupcake-image4">
+        <div class="content4">
+          <h2>Vanilla Cupcakes</h2>
+          <!-- Button to toggle cupcake quantity options and other hidden sections -->
+          <div class="add-quantity-btn">
+            <button id="toggle-quantity4">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hidden section that appears after clicking the + button -->
+      <div class="hidden-section" id="hidden-section4" style="display: none;">
+
+        <!-- Product Description -->
+        <div class="product-description">
+          <div class="content4">
+            <h3>Product Description</h3>
+            <p>Light and fluffy vanilla cupcakes topped with creamy vanilla buttercream. Simple, classic, and irresistibly sweet.</p>
+          </div>
+          <div class="ingredients-content">
+            <p>Ingredients: Flour, Sugar, Eggs, Butter, Oil, Milk, Vanilla Extract.</p>
+          </div>
+        </div>
+
+        <!-- Cupcake quantity options -->
+        <div class="cupcake-options">
+          <div class="content4">
+            <h2>Select Cupcake Quantity</h2>
+          </div>
+          <select id="cupcake-quantity4">
+            <option value="4">4 Cupcakes</option>
+            <option value="6">6 Cupcakes</option>
+            <option value="12">12 Cupcakes</option>
+          </select>
+        </div>
+
+        <!-- Cupcake flavor selection -->
+        <div class="flavour-selection">
+          <div class="content2">
+            <h2>Select Cupcake Flavours</h2>
+          </div>
+          <div id="flavour-options4">
+            <label><input type="checkbox" class="cupcake-flavour" value="Vanilla"> Vanilla</label><br>
+            <label><input type="checkbox" class="cupcake-flavour" value="Biscoff"> Biscoff</label><br>
+            <label><input type="checkbox" class="cupcake-flavour" value="Red Velvet"> Red Velvet</label><br>
+            <label><input type="checkbox" class="cupcake-flavour" value="Oreo"> Oreo</label><br>
+            <label><input type="checkbox" class="cupcake-flavour" value="Caramel"> Caramel</label><br>
+            <label><input type="checkbox" class="cupcake-flavour" value="Coffee"> Coffee</label><br>
+          </div>
+          <p id="flavour-limit-message4" style="color: red; display: none;">You can select up to <span id="max-flavours4">3</span> flavours.</p>
+        </div>
+
+        <!-- Custom design description -->
+        <div class="custom-design">
+          <div class="content4">
+            <h2>Design Your Cupcake</h2>
+          </div>
+          <textarea id="design-description4" placeholder="Describe the design you want"></textarea>
+        </div>
+
+        <!-- Order summary -->
+        <div class="order-summary">
+          <div class="content4">
+            <h2>Order Summary</h2>
+            <p id="order-summary4">Please select your quantity and design!</p>
+          </div>
+        </div>
+
+        <!-- Submit button -->
+        <button id="add-to-cart4">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- NUMBER 5 -->
+<div class="menu-wrapper">
+  <div class="cupcake-item">
+    <div class="cupcake-image">
+      <img src="steel-blue.jpg" alt="Cupcake Image" id="cupcake-image5">
+      <div class="content5">
+        <h2>Vanilla & Oreo Cupcakes</h2>
+        <!-- Button to toggle cupcake quantity options and other hidden sections -->
+        <div class="add-quantity-btn">
+          <button id="toggle-quantity5">+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hidden section that appears after clicking the + button -->
+    <div class="hidden-section" id="hidden-section5" style="display: none;">
+
+      <!-- Product Description -->
+      <div class="product-description">
+        <div class="content5">
+          <h3>Product Description</h3>
+          <p>Fluffy vanilla cupcakes with an Oreo cookie base. A delicious twist on a classic favorite.</p>
+        </div>
+        <div class="ingredients-content">
+          <p>Ingredients: Flour, Sugar, Eggs, Butter, Oil, Milk, Vanilla Extract.</p>
+        </div>
+      </div>
+
+      <!-- Cupcake quantity options -->
+      <div class="cupcake-options">
+        <div class="content5">
+          <h2>Select Cupcake Quantity</h2>
+        </div>
+        <select id="cupcake-quantity5">
+          <option value="4">4 Cupcakes</option>
+          <option value="6">6 Cupcakes</option>
+          <option value="12">12 Cupcakes</option>
+        </select>
+      </div>
+
+      <!-- Cupcake flavor selection -->
+      <div class="flavour-selection">
+        <div class="content2">
+          <h2>Select Cupcake Flavours</h2>
+        </div>
+        <div id="flavour-options5">
+          <label><input type="checkbox" class="cupcake-flavour" value="Vanilla"> Vanilla</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Biscoff"> Biscoff</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Red Velvet"> Red Velvet</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Oreo"> Oreo</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Caramel"> Caramel</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Coffee"> Coffee</label><br>
+        </div>
+        <p id="flavour-limit-message5" style="color: red; display: none;">You can select up to <span id="max-flavours5">3</span> flavours.</p>
+      </div>
+
+      <!-- Custom design description -->
+      <div class="custom-design">
+        <div class="content5">
+          <h2>Design Your Cupcake</h2>
+        </div>
+        <textarea id="design-description5" placeholder="Describe the design you want"></textarea>
+      </div>
+
+      <!-- Order summary -->
+      <div class="order-summary">
+        <div class="content5">
+          <h2>Order Summary</h2>
+          <p id="order-summary5">Please select your quantity and design!</p>
+        </div>
+      </div>
+
+      <!-- Submit button -->
+      <button id="add-to-cart5">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- NUMBER 6 -->
+<div class="menu-wrapper">
+  <div class="cupcake-item">
+    <div class="cupcake-image">
+      <img src="red-velvet.jpg" alt="Cupcake Image" id="cupcake-image6">
+      <div class="content6">
+        <h2>Red Velvet</h2>
+        <!-- Button to toggle cupcake quantity options and other hidden sections -->
+        <div class="add-quantity-btn">
+          <button id="toggle-quantity6">+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hidden section that appears after clicking the + button -->
+    <div class="hidden-section" id="hidden-section6" style="display: none;">
+
+      <!-- Product Description -->
+      <div class="product-description">
+        <div class="content6">
+          <h3>Product Description</h3>
+          <p>Classic Red Velvet cupcakes with a soft, moist crumb. Rich, vibrant, and irresistibly velvety.</p>
+        </div>
+        <div class="ingredients-content">
+          <p>Ingredients: Flour, Sugar, Eggs, Butter, Oil, Milk, Vanilla Extract.</p>
+        </div>
+      </div>
+
+      <!-- Cupcake quantity options -->
+      <div class="cupcake-options">
+        <div class="content6">
+          <h2>Select Cupcake Quantity</h2>
+        </div>
+        <select id="cupcake-quantity6">
+          <option value="4">4 Cupcakes</option>
+          <option value="6">6 Cupcakes</option>
+          <option value="12">12 Cupcakes</option>
+        </select>
+      </div>
+
+      <!-- Cupcake flavor selection -->
+      <div class="flavour-selection">
+        <div class="content2">
+          <h2>Select Cupcake Flavours</h2>
+        </div>
+        <div id="flavour-options6">
+          <label><input type="checkbox" class="cupcake-flavour" value="Vanilla"> Vanilla</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Biscoff"> Biscoff</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Red Velvet"> Red Velvet</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Oreo"> Oreo</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Caramel"> Caramel</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Coffee"> Coffee</label><br>
+        </div>
+        <p id="flavour-limit-message6" style="color: red; display: none;">You can select up to <span id="max-flavours6">3</span> flavours.</p>
+      </div>
+
+      <!-- Custom design description -->
+      <div class="custom-design">
+        <div class="content6">
+          <h2>Design Your Cupcake</h2>
+        </div>
+        <textarea id="design-description6" placeholder="Describe the design you want"></textarea>
+      </div>
+
+      <!-- Order summary -->
+      <div class="order-summary">
+        <div class="content6">
+          <h2>Order Summary</h2>
+          <p id="order-summary6">Please select your quantity and design!</p>
+        </div>
+      </div>
+
+      <!-- Submit button -->
+      <button id="add-to-cart6">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- NUMBER 7 -->
+<div class="menu-wrapper">
+  <div class="cupcake-item">
+    <div class="cupcake-image">
+      <img src="caramel-cup.jpg" alt="Cupcake Image" id="cupcake-image7">
+      <div class="content7">
+        <h2>Caramel Cupcakes</h2>
+        <!-- Button to toggle cupcake quantity options and other hidden sections -->
+        <div class="add-quantity-btn">
+          <button id="toggle-quantity7">+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hidden section that appears after clicking the + button -->
+    <div class="hidden-section" id="hidden-section7" style="display: none;">
+
+      <!-- Product Description -->
+      <div class="product-description">
+        <div class="content7">
+          <h3>Product Description</h3>
+          <p>Fluffy vanilla cupcakes filled with gooey caramel center. Sweet, smooth, and perfectly indulgent.</p>
+        </div>
+        <div class="ingredients-content">
+          <p>Ingredients: Flour, Sugar, Eggs, Butter, Oil, Milk, Vanilla Extract.</p>
+        </div>
+      </div>
+
+      <!-- Cupcake quantity options -->
+      <div class="cupcake-options">
+        <div class="content7">
+          <h2>Select Cupcake Quantity</h2>
+        </div>
+        <select id="cupcake-quantity7">
+          <option value="4">4 Cupcakes</option>
+          <option value="6">6 Cupcakes</option>
+          <option value="12">12 Cupcakes</option>
+        </select>
+      </div>
+
+      <!-- Cupcake flavor selection -->
+      <div class="flavour-selection">
+        <div class="content2">
+          <h2>Select Cupcake Flavours</h2>
+        </div>
+        <div id="flavour-options7">
+          <label><input type="checkbox" class="cupcake-flavour" value="Vanilla"> Vanilla</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Biscoff"> Biscoff</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Red Velvet"> Red Velvet</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Oreo"> Oreo</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Caramel"> Caramel</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Coffee"> Coffee</label><br>
+        </div>
+        <p id="flavour-limit-message7" style="color: red; display: none;">You can select up to <span id="max-flavours7">3</span> flavours.</p>
+      </div>
+
+      <!-- Custom design description -->
+      <div class="custom-design">
+        <div class="content7">
+          <h2>Design Your Cupcake</h2>
+        </div>
+        <textarea id="design-description7" placeholder="Describe the design you want"></textarea>
+      </div>
+
+      <!-- Order summary -->
+      <div class="order-summary">
+        <div class="content7">
+          <h2>Order Summary</h2>
+          <p id="order-summary7">Please select your quantity and design!</p>
+        </div>
+      </div>
+
+      <!-- Submit button -->
+      <button id="add-to-cart7">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- NUMBER 8 -->
+<div class="menu-wrapper">
+  <div class="cupcake-item">
+    <div class="cupcake-image">
+      <img src="coffee-cupcakes.jpg" alt="Cupcake Image" id="cupcake-image8">
+      <div class="content8">
+        <h2>Coffee Cupcakes</h2>
+        <!-- Button to toggle cupcake quantity options and other hidden sections -->
+        <div class="add-quantity-btn">
+          <button id="toggle-quantity8">+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hidden section that appears after clicking the + button -->
+    <div class="hidden-section" id="hidden-section8" style="display: none;">
+
+      <!-- Product Description -->
+      <div class="product-description">
+        <div class="content8">
+          <h3>Product Description</h3>
+          <p>Rich coffee-infused cupcakes topped with smooth espresso buttercream. Bold, aromatic, and perfect for coffee lovers.</p>
+        </div>
+        <div class="ingredients-content">
+          <p>Ingredients: Flour, Sugar, Eggs, Butter, Oil, Milk, Vanilla Extract.</p>
+        </div>
+      </div>
+
+      <!-- Cupcake quantity options -->
+      <div class="cupcake-options">
+        <div class="content8">
+          <h2>Select Cupcake Quantity</h2>
+        </div>
+        <select id="cupcake-quantity8">
+          <option value="4">4 Cupcakes</option>
+          <option value="6">6 Cupcakes</option>
+          <option value="12">12 Cupcakes</option>
+        </select>
+      </div>
+
+      <!-- Cupcake flavor selection -->
+      <div class="flavour-selection">
+        <div class="content2">
+          <h2>Select Cupcake Flavours</h2>
+        </div>
+        <div id="flavour-options8">
+          <label><input type="checkbox" class="cupcake-flavour" value="Vanilla"> Vanilla</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Biscoff"> Biscoff</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Red Velvet"> Red Velvet</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Oreo"> Oreo</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Caramel"> Caramel</label><br>
+          <label><input type="checkbox" class="cupcake-flavour" value="Coffee"> Coffee</label><br>
+        </div>
+        <p id="flavour-limit-message8" style="color: red; display: none;">You can select up to <span id="max-flavours8">3</span> flavours.</p>
+      </div>
+
+      <!-- Custom design description -->
+      <div class="custom-design">
+        <div class="content8">
+          <h2>Design Your Cupcake</h2>
+        </div>
+        <textarea id="design-description8" placeholder="Describe the design you want"></textarea>
+      </div>
+
+      <!-- Order summary -->
+      <div class="order-summary">
+        <div class="content8">
+          <h2>Order Summary</h2>
+          <p id="order-summary8">Please select your quantity and design!</p>
+        </div>
+      </div>
+
+      <!-- Submit button -->
+      <button id="add-to-cart8">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  document.querySelectorAll(".add-quantity-btn button").forEach(button => {
+    button.addEventListener("click", function () {
+      const cupcakeItem = this.closest(".cupcake-item");
+      const hiddenSection = cupcakeItem.querySelector(".hidden-section");
+
+      if (hiddenSection.style.display === "none" || hiddenSection.style.display === "") {
+        hiddenSection.style.display = "block";
+        this.textContent = "-"; // Change + to -
+      } else {
+        hiddenSection.style.display = "none";
+        this.textContent = "+"; // Change - to +
+      }
+    });
+  });
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const quantitySelect = document.getElementById('cupcake-quantity');
+    const flavourOptions = document.getElementById('flavour-options');
+    const flavourLimitMessage = document.getElementById('flavour-limit-message');
+    const maxFlavoursDisplay = document.getElementById('max-flavours');
+    const flavourCheckboxes = document.querySelectorAll('.cupcake-flavour');
+
+
+    // Function to update the maximum number of flavours based on quantity
+    function updateFlavourLimit() {
+      const quantity = quantitySelect.value;
+      let maxFlavours = 3; // Default to 3 for 12 cupcakes
+
+      if (quantity === '4') {
+        maxFlavours = 1;
+      } else if (quantity === '6') {
+        maxFlavours = 2;
+      }
+
+      maxFlavoursDisplay.textContent = maxFlavours;
+      flavourLimitMessage.style.display = 'block';
+
+      // Reset all checkboxes
+      flavourCheckboxes.forEach(checkbox => {
+        checkbox.checked = false;
+        checkbox.disabled = false;
+      });
+
+      // Add event listener to monitor selection changes
+      flavourOptions.addEventListener('change', function () {
+        const selectedFlavours = Array.from(flavourCheckboxes).filter(checkbox => checkbox.checked);
+        if (selectedFlavours.length > maxFlavours) {
+          alert(`You can select up to ${maxFlavours} flavours.`);
+          selectedFlavours[selectedFlavours.length - 1].checked = false;
+        }
+      });
+    }
+
+
+
+    // Initialize flavour selection based on the default quantity
+    updateFlavourLimit();
+
+    // Update flavour selection when quantity changes
+    quantitySelect.addEventListener('change', function () {
+      updateFlavourLimit();
+    });
+  });
+</script>
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const quantitySelect = document.getElementById('cupcake-quantity');
+    const flavourOptions = document.getElementById('flavour-options');
+    const flavourLimitMessage = document.getElementById('flavour-limit-message');
+    const flavourCheckboxes = document.querySelectorAll('.cupcake-flavour');
+    const descriptionInput = document.getElementById('design-description');
+    const addToCartButton = document.getElementById('add-to-cart');
+
+    // Function to update the maximum number of flavours based on quantity
+    function updateFlavourLimit() {
+      const quantity = quantitySelect.value;
+      let maxFlavours = 3; // Default to 3 for 12 cupcakes
+
+      if (quantity === '4') {
+        maxFlavours = 1;
+      } else if (quantity === '6') {
+        maxFlavours = 2;
+      }
+
+      flavourLimitMessage.textContent = `You can select up to ${maxFlavours} flavours.`;
+      flavourLimitMessage.style.display = 'block';
+
+      // Reset all checkboxes
+      flavourCheckboxes.forEach(checkbox => {
+        checkbox.checked = false;
+        checkbox.disabled = false;
+      });
+
+      // Add event listener to monitor selection changes
+      flavourOptions.addEventListener('change', function () {
+        const selectedFlavours = Array.from(flavourCheckboxes).filter(checkbox => checkbox.checked);
+        if (selectedFlavours.length > maxFlavours) {
+          alert(`You can select up to ${maxFlavours} flavours.`);
+          selectedFlavours[selectedFlavours.length - 1].checked = false;
+        }
+      });
+    }
+
+    // Initialize flavour selection based on the default quantity
+    updateFlavourLimit();
+
+    // Update flavour selection when quantity changes
+    quantitySelect.addEventListener('change', function () {
+      updateFlavourLimit();
+    });
+
+    // Function to update order summary
+    function updateOrderSummary() {
+      const selectedFlavours = Array.from(flavourCheckboxes)
+              .filter(checkbox => checkbox.checked)
+              .map(checkbox => checkbox.value);
+      const quantity = parseInt(quantitySelect.value);
+      const pricePerCupcake = parseFloat(quantitySelect.selectedOptions[0].getAttribute('data-price'));
+      const totalPrice = pricePerCupcake * quantity;
+      const description = descriptionInput.value.trim();
+
+      // Ensure description is included in the order summary
+      const orderSummary = document.getElementById('order-summary');
+      orderSummary.innerHTML = `
+        Quantity: ${quantity} Box Of Cupcakes<br>
+        Flavours: ${selectedFlavours.join(', ')}<br>
+        Description: ${description || 'No description provided'}<br>
+        Total Price: £${totalPrice.toFixed(2)}
+      `;
+    }
+
+    // Update order summary when quantity or flavour selection changes
+    quantitySelect.addEventListener('change', updateOrderSummary);
+    flavourOptions.addEventListener('change', updateOrderSummary);
+
+    // Handle Add to Cart button click
+    addToCartButton.addEventListener('click', function() {
+      const selectedFlavours = Array.from(flavourCheckboxes)
+              .filter(checkbox => checkbox.checked)
+              .map(checkbox => checkbox.value);
+      const quantity = parseInt(quantitySelect.value);
+      const description = descriptionInput.value.trim();
+
+      if (selectedFlavours.length === 0) {
+        alert('Please select at least one flavour.');
+        return;
+      }
+      if (!description) {
+        alert('Please describe your cupcake design.');
+        return;
+      }
+
+      const pricePerCupcake = parseFloat(quantitySelect.selectedOptions[0].getAttribute('data-price'));
+      const cartItem = {
+        name: 'Biscoff Cupcakes',
+        quantity: quantity,
+        flavours: selectedFlavours,
+        description: description,
+        price: pricePerCupcake * quantity
+      };
+
+
+      // Retrieve cart from localStorage
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push(cartItem);
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      alert('Item added to cart!');
+      updateOrderSummary(); // Update order summary after adding to cart
+    });
+
+    // Initialize order summary
+    updateOrderSummary();
+  });
+</script>
+
+
+
+
+
+
+
+<script>
+  // JavaScript for mobile menu toggle
+  const menuIcon = document.querySelector('.menu-icon');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuIcon.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll(".image-section");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.3 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  });
+</script>
+
+</body>
+</html>

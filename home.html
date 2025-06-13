@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Restaurant</title>
+    <link rel="stylesheet" href="design.css">
+</head>
+
+<body>
+
+<!-- Responsive Header -->
+<header class="heading">
+    <!--<div class="logo">BakedByKey</div> -->
+    <img src="snipsnip.png"class="gallimg2"/>
+    <nav class="nav-links">
+        <a href="home.html">HOME</a>
+        <a href="menu.html">MENU</a>
+        <a href="addtocart.html">CART</a>
+    </nav>
+
+    <div class="menu-icon">&#9776;</div> <!-- Hamburger icon -->
+</header>
+
+<!-- Gallery Section -->
+<div class="gall-div">
+    <video controls width="100%">
+        <source src="bbcupcakes.mp4" type="video/mp4">
+
+    </video>
+
+</div>
+
+<section class="mini-title">
+    <div class="min-title">
+    <h5>Popular Flavours</h5>
+    </div>
+</section>
+
+
+
+
+<section class="image-section">
+    <div class="row reverse">
+        <img src="biscoff-cupcakes.jpg" alt="Cookie 1">
+        <div class="content">
+            <h2>Biscoff Cupcakes</h2>
+            <p class="description">Smooth Biscoff Filling With A Creamy White Chocolate & Biscoff Icing!</p>
+            <div class="buttons">
+                <a href="menu.html" class="btn learn-more">Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="image-section">
+
+    <div class="row">
+        <img src="decorated-cupcakes.jpg" alt="Cookie 2">
+        <div class="content">
+            <h2>Oreo & Biscoff Cupcakes</h2>
+            <p class="description">Oreo Bottom With An Oreo Crumb Icing & A Smooth Biscoff Filling With A Creamy White Chocolate & Biscoff Icing!</p>
+            <div class="buttons">
+                <a href="menu.html" class="btn learn-more">Learn More</a>
+        </div>
+        </div>
+    </div>
+</section>
+
+<section class="image-section">
+    <div class="row reverse">
+    <img src="black-normal.jpg" alt="Cookie 3">
+    <div class="content">
+        <h2>Biscoff Cupcakes</h2>
+        <p class="description">Smooth Biscoff Filling With A Creamy Buttercream Icing!</p>
+        <div class="buttons">
+            <a href="menu.html" class="btn learn-more">Learn More</a>
+        </div>
+    </div>
+        </div>
+</section>
+
+
+<script>
+    // JavaScript for mobile menu toggle
+    const menuIcon = document.querySelector('.menu-icon');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuIcon.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll(".image-section");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, { threshold: 0.3 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menu</title>
+    <link rel="stylesheet" href="design.css">
+</head>
+<body>
+<!-- Responsive Header -->
+<header class="heading">
+    <!--<div class="logo">BakedByKey</div> -->
+    <img src="snipsnip.png"class="gallimg2"/>
+    <nav class="nav-links">
+        <a href="home.html">HOME</a>
+        <a href="menu.html">MENU</a>
+        <a href="addtocart.html">CART</a>
+    </nav>
+
+    <div class="menu-icon">&#9776;</div> <!-- Hamburger icon -->
+</header>
+
+<div class="cart-container">
+    <h1>Your Shopping Cart</h1>
+    <div id="cart-items">
+        <!-- Cart items will be displayed here -->
+    </div>
+    <div id="cart-total">
+        <!-- Total price will be displayed here -->
+    </div>
+    <button id="checkout-button" onclick="window.location.href='checkout.html';">Proceed to Checkout</button>
+</div>
+
+</body>
+</html>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const quantitySelect = document.getElementById('cupcake-quantity');
+        const flavourOptions = document.getElementById('flavour-options');
+        const flavourLimitMessage = document.getElementById('flavour-limit-message');
+        const flavourCheckboxes = document.querySelectorAll('.cupcake-flavour');
+        const descriptionInput = document.getElementById('design-description');
+        const addToCartButton = document.getElementById('add-to-cart');
+
+        // Function to update the maximum number of flavours based on quantity
+        function updateFlavourLimit() {
+            const quantity = quantitySelect.value;
+            let maxFlavours = 3; // Default to 3 for 12 cupcakes
+
+            if (quantity === '4') {
+                maxFlavours = 1;
+            } else if (quantity === '6') {
+                maxFlavours = 2;
+            }
+
+            flavourLimitMessage.textContent = `You can select up to ${maxFlavours} flavours.`;
+            flavourLimitMessage.style.display = 'block';
+
+            // Reset all checkboxes
+            flavourCheckboxes.forEach(checkbox => {
+                checkbox.checked = false;
+                checkbox.disabled = false;
+            });
+
+            // Add event listener to monitor selection changes
+            flavourOptions.addEventListener('change', function () {
+                const selectedFlavours = Array.from(flavourCheckboxes).filter(checkbox => checkbox.checked);
+                if (selectedFlavours.length > maxFlavours) {
+                    alert(`You can select up to ${maxFlavours} flavours.`);
+                    selectedFlavours[selectedFlavours.length - 1].checked = false;
+                }
+            });
+        }
+
+        // Initialize flavour selection based on the default quantity
+        updateFlavourLimit();
+
+        // Update flavour selection when quantity changes
+        quantitySelect.addEventListener('change', function () {
+            updateFlavourLimit();
+        });
+
+        // Function to update order summary
+        function updateOrderSummary() {
+            const selectedFlavours = Array.from(flavourCheckboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value);
+            const quantity = parseInt(quantitySelect.value);
+            const pricePerCupcake = parseFloat(quantitySelect.selectedOptions[0].getAttribute('data-price'));
+            const totalPrice = pricePerCupcake * quantity;
+            const description = descriptionInput.value.trim();
+
+            // Ensure description is included in the order summary
+            const orderSummary = document.getElementById('order-summary');
+            orderSummary.innerHTML = `
+        Quantity: ${quantity} Box Of Cupcakes<br>
+        Flavours: ${selectedFlavours.join(', ')}<br>
+        Description: ${description || 'No description provided'}<br>
+        Total Price: £${totalPrice.toFixed(2)}
+      `;
+        }
+
+        // Update order summary when quantity or flavour selection changes
+        quantitySelect.addEventListener('change', updateOrderSummary);
+        flavourOptions.addEventListener('change', updateOrderSummary);
+
+        // Handle Add to Cart button click
+        addToCartButton.addEventListener('click', function() {
+            const selectedFlavours = Array.from(flavourCheckboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value);
+            const quantity = parseInt(quantitySelect.value);
+            const description = descriptionInput.value.trim();
+
+            if (selectedFlavours.length === 0) {
+                alert('Please select at least one flavour.');
+                return;
+            }
+            if (!description) {
+                alert('Please describe your cupcake design.');
+                return;
+            }
+
+            const pricePerCupcake = parseFloat(quantitySelect.selectedOptions[0].getAttribute('data-price'));
+            const cartItem = {
+                name: 'Biscoff Cupcakes',
+                quantity: quantity,
+                flavours: selectedFlavours,
+                description: description,
+                price: pricePerCupcake * quantity
+            };
+
+            // Retrieve cart from localStorage
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(cartItem);
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            alert('Item added to cart!');
+            updateOrderSummary(); // Update order summary after adding to cart
+        });
+
+        // Initialize order summary
+        updateOrderSummary();
+    });
+</script>
+
+
+
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartTotalContainer = document.getElementById('cart-total');
+        const descriptionInput = document.getElementById('design-description');
+
+        // Retrieve the cart from localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Function to update the cart display
+        function updateCart() {
+            // Clear the current cart display
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+
+            // Loop through each cart item and display it
+            cart.forEach((item, index) => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('cart-item');
+                itemElement.innerHTML = `
+                    <p>${item.name}</p>
+                    <p>${item.description}</p>
+                    <p>Price: £${item.price.toFixed(2)}</p>
+                    <p>Quantity: ${item.quantity}</p>
+                    <p>Total: £${(item.price * item.quantity).toFixed(2)}</p>
+                    <button class="remove-item" data-index="${index}">Remove</button>
+                `;
+                cartItemsContainer.appendChild(itemElement);
+                total += item.price * item.quantity;
+            });
+
+            // Display the total price
+            cartTotalContainer.innerHTML = `Total: £${total.toFixed(2)}`;
+
+            // Add event listeners to remove buttons
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'), 10);
+                    decreaseItemQuantity(index);
+                });
+            });
+        }
+
+        // Function to decrease the quantity of an item
+        function decreaseItemQuantity(index) {
+            // Decrease the quantity of the item at the specified index
+            if (cart[index].quantity > 1) {
+                cart[index].quantity -= 1;
+            } else {
+                // If quantity is 1, remove the item from the cart
+                cart.splice(index, 1);
+            }
+
+            // Update the cart in localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Update the cart display
+            updateCart();
+        }
+
+        // Initial cart update
+        updateCart();
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+<script>
+    // JavaScript for mobile menu toggle
+    const menuIcon = document.querySelector('.menu-icon');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuIcon.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll(".image-section");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, { threshold: 0.3 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>
+
+
+
+
+
